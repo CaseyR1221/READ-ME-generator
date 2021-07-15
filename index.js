@@ -27,25 +27,25 @@ const questions = [
         message: "Please enter a brief description of this project and its purpose."
     },
     {
-        type:"checkbox",
+        type:"list",
         name: "license",
         message: "What licenses should be included in your project? Please check all that apply.",
         choices: [
             "MIT",
             "APACHE 2.0",
-            "GLP 3.0",
+            "GPL 3.0",
             "BSD 3",
             "None"
         ]
     },
     {
-        type: "confirm",
+        type: "input",
         name: "installation",
         message: "What commands should be ran to install the dependencies?",
         default: "npm i" 
     },
     {
-        type: "confirm",
+        type: "input",
         name: "test",
         message: "What command should be ran to run tests?",
         default: "npm test" 
@@ -57,16 +57,27 @@ const questions = [
     },
     {
         type: "input",
-        name: "contributing",
+        name: "contribute",
         message: "What does the user need to know in order to contribute to th repo?" 
     },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = (fileName, data) => {
+    fs.writeFileSync(path.join(process.cwd(), fileName), data), (err) =>
+        err ? console.log(err) : console.log("Success!");
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+const init = () => {
+    inquirer.prompt(questions).then((answers) => {
+        console.log(answers);
+
+        let content = generateMarkdown(answers);
+        console.log(content);
+        writeToFile("testREADME.md", content);
+    })
+}
 
 // Function call to initialize app
 init();
