@@ -46,8 +46,9 @@ const renderLicenseLink = (license) => {
 // If there is no license, return an empty string
 const renderLicenseSection = (license) => {
  return ` 
- ##### ${renderLicenseBadge(license)}${renderLicenseLink(license)}
- Please feel free to fork and even collaborate with me on this awesome [repository](https://github.com/supercodingninja/CodeQuiz ).  Thank you for viewing! - Frederick Thomas, Super Coding Ninja™ [2014-Present](https://supercodingninja.github.io/) All Rights Reserved
+ ## License
+ ${license}
+ \nPlease feel free to fork and even collaborate with me on this awesome [repository](https://github.com/supercodingninja/CodeQuiz ).  Thank you for viewing! - Frederick Thomas, Super Coding Ninja™ [2014-Present](https://supercodingninja.github.io/) All Rights Reserved
     
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  
@@ -60,6 +61,7 @@ const renderLicenseSection = (license) => {
 const generateMarkdown = (data) => {
   let content = `
   # ${data.title}
+  ##### ${renderLicenseBadge(data.license)}${renderLicenseLink(data.license)}
   ## Table of Contents
   * [Repository Description](#description)
   * [Installation Instructions](#installation)

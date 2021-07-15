@@ -29,7 +29,7 @@ const questions = [
     {
         type:"list",
         name: "license",
-        message: "What licenses should be included in your project? Please check all that apply.",
+        message: "What licenses should be included in your project?",
         choices: [
             "MIT",
             "APACHE 2.0",
@@ -75,7 +75,7 @@ const init = () => {
 
         let content = generateMarkdown(answers);
         console.log(content);
-        writeToFile("testREADME.md", content);
+        writeToFile("test4README.md", content);
     })
 }
 
