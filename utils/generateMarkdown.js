@@ -1,10 +1,11 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const renderLicenseBadge = (license) => {
+  let badge = "";
   switch (license) {
     case "MIT":
       console.log("test");
-      let badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
+      badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]";
       return badge;
     case "APACHE 2.0":
       badge = "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)]";
@@ -23,10 +24,11 @@ const renderLicenseBadge = (license) => {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 const renderLicenseLink = (license) => {
+  let link = ""
   switch (license) {
     case "MIT":
       console.log("test2");
-      let link = "(https://opensource.org/licenses/MIT)"
+      link = "(https://opensource.org/licenses/MIT)"
       return link;
     case "APACHE 2.0":
       link = "(https://opensource.org/licenses/Apache-2.0)"
@@ -44,11 +46,11 @@ const renderLicenseLink = (license) => {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-const renderLicenseSection = (license) => {
+const renderLicenseSection = (license, github, repo) => {
  return ` 
  ## License
  ${license}
- \nPlease feel free to fork and even collaborate with me on this awesome [repository](https://github.com/supercodingninja/CodeQuiz ).  Thank you for viewing! - Frederick Thomas, Super Coding Ninja™ [2014-Present](https://supercodingninja.github.io/) All Rights Reserved
+ \nPlease feel free to fork or collaborate on this project. Thank you for viewing! - Casey Rowlands, [${github}™](${repo}) 2019-Present. All Rights Reserved.
     
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  
@@ -73,18 +75,27 @@ const generateMarkdown = (data) => {
   ${data.description}
 
   ## Installation
+  ###### [Back to Table of Contents](#Table-of-Contents)
   ${data.installation}
 
   ## Usage
+  ###### [Back to Table of Contents](#Table-of-Contents)
   ${data.usage}
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.license, data.github, data.repo)}
 
   ## Contributing
+  ###### [Back to Table of Contents](#Table-of-Contents)
   ${data.contribute}
 
   ## Tests
-  ${data.test}`;
+  ###### [Back to Table of Contents](#Table-of-Contents)
+  ${data.test}
+  
+  ## Questions
+  ###### [Back to Table of Contents](#Table-of-Contents)
+  All questions and concerns can be addressed to ${data.github} on GitHub, or sent by email to ${data.email}.
+  \nThank you!`;
 
   return content;
 }

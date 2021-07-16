@@ -13,6 +13,11 @@ const questions = [
     },
     {
         type: "input",
+        name: "repo",
+        message: "Please enter the url of your Github repo."
+    },
+    {
+        type: "input",
         name: "email",
         message: "What is your email address?"
     },
@@ -75,7 +80,7 @@ const init = () => {
 
         let content = generateMarkdown(answers);
         console.log(content);
-        writeToFile("test4README.md", content);
+        writeToFile("test7README.md", content);
     })
 }
 
