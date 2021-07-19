@@ -80,7 +80,7 @@ const init = () => {
 
         let content = generateMarkdown(answers);
         console.log(content);
-        writeToFile("test7README.md", content);
+        writeToFile("README.md", content);
     })
 }
 
