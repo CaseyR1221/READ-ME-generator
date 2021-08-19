@@ -13,13 +13,18 @@
 
   ## Installation
   ###### [Back to Table of Contents](#Table-of-Contents)
+  
+  ```
   npm i
+  ```
 
   ## Usage
   ###### [Back to Table of Contents](#Table-of-Contents)
-  Please feel free to fork and contribute to this project as you see fit
+  
+  ![READ-ME-screenshot](https://user-images.githubusercontent.com/44381344/129998553-97ce8f73-2619-420e-8471-58c396790e2a.jpeg)
+  [Walkthrough](https://youtu.be/GkHm5-r8SfY)
 
-   
+
  ## License
  None
  
